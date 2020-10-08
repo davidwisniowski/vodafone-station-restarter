@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const screenFolder = 'screens/'
+const screenFolder = 'screens/';
  
 (async () => {
   
