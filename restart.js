@@ -1,11 +1,12 @@
 const sleep = require('sleep');
 const puppeteer = require('puppeteer');
+const screenFolder = 'screens/'
  
 (async () => {
   
   let browser;
 
-  if(process.env.MS_INTERNAL_BROWSER) {
+  if(process.env.INTERNAL_BROWSER) {
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 100,
@@ -29,21 +30,24 @@ const puppeteer = require('puppeteer');
       console.log(`${i}: ${msg.args()[i]}`);
   });
 
-  await page.goto('http://192.168.0.1/');
-  //await page.waitForSelector('[type=password]');
+  // login
+  await page.goto(process.env.STATION_ADDRESS);
   await page.type("#Password_m", process.env.PASSWORD);
   await page.evaluate(() => { document.querySelector('.tablet > [type=button]').click(); });  
 
-  await page.screenshot({path: 'screens/login.png'});
+  if(process.env.DEBUG) await page.screenshot({path: screenFolder + 'login.png'});
 
-
-  await page.goto('http://192.168.0.1/?status_restart&mid=StatusRestart');
-  await page.screenshot({path: 'screens/restart-page.png'});
+  // goto: restart page
+  await page.goto(process.env.STATION_ADDRESS + '?status_restart&mid=StatusRestart');
+  if(process.env.DEBUG) await page.screenshot({path: screenFolder + 'restart-page.png'});
   
+  // wait for: restart popup  
   await page.waitFor("#PAGE_RESTART_RESTART");
   await page.click("#PAGE_RESTART_RESTART");
+  if(process.env.DEBUG) await page.screenshot({path: screenFolder + 'before-restart.png'});  
 
-  await page.screenshot({path: 'screens/before-restart.png'});  
+  // action: restart
   await page.click("#PAGE_RESTART_POPUP_APPLY");
+
   await browser.close();
 })();
