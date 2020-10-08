@@ -1,14 +1,17 @@
+A restart script for the Vodafone Station. The script must run on a Linux environment with nodejs and can be stored in a cronjob.
+
 ## Configuration
 
 Create an environment file in root directory (.env)
 
 ```
-MS_EMAIL=xxx
-MS_PASSWORD=xxx
-MS_INTERNAL_BROWSER=1 (or null/empty)
+STATION_ADDRESS=http://192.168.0.1 (router address)
+DEBUG=false (true/false)
+PASSWORD=xxx (your password)
+INTERNAL_BROWSER=true (true/false)
 ```
 
-## Installation
+## Linux Installation
 ```
 // install requirements (chromium, nodejs, npm)
 apt install chromium-browser
