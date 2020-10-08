@@ -1,8 +1,8 @@
 {
-  "name": "ms-rewards",
+  "name": "vodafone-station-restarter",
   "version": "1.0.0",
-  "description": "Create an environment file in root directory (.env)",
-  "main": "app.js",
+  "description": "A restart script for the Vodafone Station",
+  "main": "restart.js",
   "dependencies": {
     "dotenv": "^8.2.0",
     "puppeteer": "^2.1.0"
@@ -11,6 +11,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "David Wisniowski",
   "license": "ISC"
 }
