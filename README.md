@@ -1,5 +1,7 @@
 A restart script for the Vodafone Station. The script must run on a Linux environment with nodejs and can be stored in a cronjob.
 
+The script starts the Chromium Browser and carries out the necessary steps for a restart in the Vodafone Station interface.
+
 ## Configuration
 
 Create an environment file in root directory (.env)
