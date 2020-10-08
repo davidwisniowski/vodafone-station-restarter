@@ -1,4 +1,3 @@
-const sleep = require('sleep');
 const puppeteer = require('puppeteer');
 const screenFolder = 'screens/'
  

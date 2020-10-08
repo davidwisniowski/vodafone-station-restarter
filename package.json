@@ -5,8 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "puppeteer": "^2.1.0",
-    "sleep": "^6.1.0"
+    "puppeteer": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {
