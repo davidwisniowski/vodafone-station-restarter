@@ -46,7 +46,7 @@ const screenFolder = 'screens/'
   if(process.env.DEBUG) await page.screenshot({path: screenFolder + 'before-restart.png'});  
 
   // action: restart
-  await page.click("#PAGE_RESTART_POPUP_APPLY");
+  await page.click("#PAGE_RESTART_POPUP_APPLY1");
 
   await browser.close();
 })();
