@@ -50,3 +50,4 @@ const screenFolder = 'screens/'
 
   await browser.close();
 })();
+
